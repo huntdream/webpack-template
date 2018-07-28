@@ -4,6 +4,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   mode: 'development',
+  devtool: 'inline-source-map',
   entry: {
     index: './src/app.js'
   },
