@@ -1,6 +1,6 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
   mode: 'development',
@@ -51,6 +51,6 @@ const config = {
       title: 'Template'
     })
   ]
-};
+}
 
-module.exports = config;
+module.exports = config
