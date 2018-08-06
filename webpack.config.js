@@ -1,12 +1,13 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const config = {
   mode: 'development',
   devtool: 'inline-source-map',
   entry: {
-    index: './src/app.js'
+    index: './src/app.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -41,7 +42,13 @@ const config = {
       }
     ]
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   plugins: [
+    new CleanWebpackPlugin('build'),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'
