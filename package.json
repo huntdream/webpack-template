@@ -24,6 +24,7 @@
   "dependencies": {
     "@types/react": "^16.4.13",
     "@types/react-dom": "^16.0.7",
+    "clean-webpack-plugin": "^0.1.19",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   }
