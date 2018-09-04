@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "module": "es6",
+    "outDir": "./dist",
+    "removeComments": false,
+    "target": "es5",
+    "moduleResolution": "node"
+  },
+  "include": ["./", "./src/**/*"]
+}
