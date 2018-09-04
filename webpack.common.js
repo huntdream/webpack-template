@@ -25,6 +25,10 @@ module.exports = {
         use: 'source-map-loader'
       },
       {
+        test: /\.css$/,
+        use: 'css-loader'
+      },
+      {
         test: /\.sass$/,
         use: ['style-loader', 'sass-loader']
       }
