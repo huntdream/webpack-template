@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
@@ -8,7 +9,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.js'
+    filename: './js/[name].bundle.js'
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.json']
@@ -25,12 +26,24 @@ module.exports = {
         use: 'source-map-loader'
       },
       {
-        test: /\.css$/,
-        use: 'css-loader'
-      },
-      {
-        test: /\.sass$/,
-        use: ['style-loader', 'sass-loader']
+        test: /\.(sass|css)$/,
+        use: [
+          process.env.NODE_ENV !== 'production'
+            ? 'style-loader'
+            : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: {
+                safe: true
+              }
+            }
+          },
+          'postcss-loader',
+          {
+            loader: 'sass-loader'
+          }
+        ]
       }
     ]
   },
@@ -38,6 +51,9 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './public/index.html',
       filename: './index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: './css/[name].chunk.css'
     })
   ]
 };

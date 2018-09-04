@@ -5,15 +5,20 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js"
   },
   "devDependencies": {
+    "autoprefixer": "^9.1.4",
     "awesome-typescript-loader": "^5.2.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.2",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.2",
+    "postcss-loader": "^3.0.0",
+    "precss": "^3.1.2",
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.0.3",
@@ -26,8 +31,10 @@
     "@types/react": "^16.4.13",
     "@types/react-dom": "^16.0.7",
     "clean-webpack-plugin": "^0.1.19",
+    "node-sass": "^4.9.3",
     "normalize.css": "^8.0.0",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "style-loader": "^0.23.0"
   }
 }
