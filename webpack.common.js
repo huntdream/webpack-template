@@ -54,6 +54,9 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: './css/[name].chunk.css'
+    }),
+    new webpack.HotModuleReplacementPlugin({
+      // Options...
     })
   ]
 };
