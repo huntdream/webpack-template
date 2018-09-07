@@ -13,6 +13,10 @@ export default class App extends React.Component<any> {
           shape="circle"
           size="small"
         />
+        <Avatar
+          src="http://p2.music.126.net/6CDzo-lIA0FIu6GwQrXqeQ==/3285340751745782.jpg"
+          shape="circle"
+        />
         <Playground />
       </div>
     );
