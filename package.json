@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --optimize-minimize --config webpack.prod.js && gulp imagemin"
+    "build": "webpack --optimize-minimize --config webpack.prod.js "
   },
   "license": "MIT",
   "dependencies": {
