@@ -4,8 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    app: './src/assets/js/app.js',
-    
+    app: './src/app.js'
   },
   output: {
     filename: './js/[name].bundle.js',
@@ -73,7 +72,7 @@ module.exports = {
     new HtmlPlugin({
       title: 'Title',
       filename: 'index.html',
-      template: path.resolve(__dirname, './src/view/index.html'),
+      template: path.resolve(__dirname, './index.html'),
       chunks: ['app', 'commons', 'index']
     }),
     new MiniCssExtractPlugin({
@@ -81,11 +80,4 @@ module.exports = {
       chunkFilename: './css/[name].css'
     })
   ]
-  // externals: {
-  //   lodash: {
-  //     commonjs: 'lodash',
-  //     amd: 'lodash',
-  //     root: '_'
-  //   }
-  // }
 };
