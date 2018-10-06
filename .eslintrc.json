@@ -6,7 +6,6 @@
     "jquery": true,
     "node": true
   },
-  "extends": "airbnb",
   "settings": {
     "import/resolver": {
       "webpack": {
