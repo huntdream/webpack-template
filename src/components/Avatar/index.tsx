@@ -1,38 +1,38 @@
-import * as React from 'react';
-import './style.sass';
+import * as React from 'react'
+import './style.sass'
 
-export type Shape = 'square' | 'circle';
+export type Shape = 'square' | 'circle'
 
-export type Size = 'default' | 'small' | 'large';
+export type Size = 'default' | 'small' | 'large'
 
 export interface AvatarProps {
-  src: string;
-  style?: React.CSSProperties;
-  shape?: Shape;
-  size?: Size;
-  alt?: string;
+  src: string
+  style?: React.CSSProperties
+  shape?: Shape
+  size?: Size
+  alt?: string
 }
 
 export default class Avatar extends React.Component<AvatarProps> {
   render() {
-    const { src, shape, size, alt, style } = this.props;
-    let sizeCal = '';
+    const { src, shape, size, alt, style } = this.props
+    let sizeCal = ''
     switch (size) {
       case 'small':
-        sizeCal = '40px';
-        break;
+        sizeCal = '40px'
+        break
       case 'large':
-        sizeCal = '60px';
-        break;
+        sizeCal = '60px'
+        break
       default:
-        break;
+        break
     }
     return (
       <div
         className="avatar-wrap"
         style={{
           height: sizeCal,
-          width: sizeCal
+          width: sizeCal,
         }}
       >
         <img
@@ -40,11 +40,11 @@ export default class Avatar extends React.Component<AvatarProps> {
           className="avatar"
           style={{
             borderRadius: shape === 'circle' && '50%',
-            ...style
+            ...style,
           }}
           alt={alt}
         />
       </div>
-    );
+    )
   }
 }
